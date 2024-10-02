@@ -93,8 +93,6 @@
     return false;
   }
 
-  document.getElementById("submitMoodEntry").onclick = addMoodEntry
-
   async function getMoodEntries(){
       return fetch("{% url 'main:show_json' %}").then((res) => res.json())
   }
@@ -202,6 +200,7 @@ refreshMoodEntries();
 
   document.getElementById("cancelButton").addEventListener("click", hideModal);
   document.getElementById("closeModalBtn").addEventListener("click", hideModal);
+  document.getElementById("submitMoodEntry").onclick = addMoodEntry
 </script>
 
 {% endblock content %}
